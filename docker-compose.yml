@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  chrome-novnc:
+    container_name: chrome-novnc
+    environment:
+      - VNC_PASS=${VNC_PASS-CHANGE_IT}
+      - VNC_TITLE=${VNC_TITLE-Chromium}
+      - VNC_SHARED=${VNC_SHARED-false}
+      - VNC_RESOLUTION=${VNC_RESOLUTION-1280x720}
+      - VNC_PORT=${DRIVER_PORT-8080}
+    image: king/chrome-novnc:amd64
+    privileged: true
+    ports:
+      - "8080:8080/tcp"
+    restart: always
+    user: root
