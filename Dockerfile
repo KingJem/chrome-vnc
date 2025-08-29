@@ -1,6 +1,5 @@
 FROM ubuntu:22.04
 
-# 环境变量配置（保持原样）
 ENV	VNC_PASS="CHANGE_IT" \
 	VNC_TITLE="Chromium" \
 	VNC_RESOLUTION="1280x720" \
@@ -14,7 +13,6 @@ ENV	VNC_PASS="CHANGE_IT" \
 	TZ="Asia/Kolkata"
 ENV DEBIAN_FRONTEND=noninteractive
 
-# 先复制配置文件，利用Docker缓存
 COPY assets/ /
 COPY chromium-browser-unstable_120.0.6099.312-1_amd64.deb /
 
