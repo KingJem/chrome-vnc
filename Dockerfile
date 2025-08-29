@@ -61,6 +61,7 @@ RUN useradd -ms /bin/bash chrome && \
         x11vnc \
         websockify \
         openbox \
+        socat \
         fonts-noto-core \
         fonts-noto-cjk && \
     dpkg -i chromium-browser-unstable_120.0.6099.312-1_amd64.deb && \

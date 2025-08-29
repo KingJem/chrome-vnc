@@ -7,11 +7,14 @@ services:
       - VNC_PASS=${VNC_PASS-CHANGE_IT}
       - VNC_TITLE=${VNC_TITLE-Chromium}
       - VNC_SHARED=${VNC_SHARED-false}
-      - VNC_RESOLUTION=${VNC_RESOLUTION-1280x720}
-      - VNC_PORT=${DRIVER_PORT-8080}
+      - VNC_RESOLUTION=${VNC_RESOLUTION-1920x1080}
+      - VNC_PORT=${VNC_PORT-8080}
+      - CDP_PORT=${CDP_PORT-9225}
     image: king/chrome-novnc:amd64
     privileged: true
+#    network_mode: host
     ports:
       - "8080:8080/tcp"
+      - "9225:9225/tcp"
     restart: always
     user: root
